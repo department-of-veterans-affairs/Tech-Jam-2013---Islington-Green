@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Labs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Labs</h2>
+
+<div id="data-list">
+
+    <h3>
+        Provider Entered
+    </h3>
+    <ul data-bind="foreach: $data.Labs.ProviderEntered()">
+        <li data-bind="text: TestName"></li>
+    </ul>
+
+    <h3>
+        Self Entered
+    </h3>
+    <ul data-bind="foreach: $data.Labs.SelfEntered()">
+        <li data-bind="text: TestName"></li>
+    </ul>
+</div>
+
+<script src="/Scripts/knockout-3.0.0.js" type="text/javascript"></script>
+<script src="/Scripts/knockout.mapping-latest.js" type="text/javascript"></script>
+<script data-main="/Scripts/Data/main" src="/Scripts/lib/requirejs/require.js" type="text/javascript"></script>

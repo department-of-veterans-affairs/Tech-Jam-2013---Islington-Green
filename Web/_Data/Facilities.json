@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", 
+"properties": { "FID": 0, "NAME": "VA Mid-Atlantic Health Care Network" }, 
+"geometry": { "type": "Point", 
+"coordinates": [ 35.99816006600048, -78.90217110099968 ] } }
+]}

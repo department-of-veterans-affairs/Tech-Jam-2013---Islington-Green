@@ -1,0 +1,249 @@
+﻿@using Web.Helpers
+@{
+    ViewBag.Title = "Contact";
+}
+
+<h2>Veterans Health Portal</h2>
+
+<div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+<div class="row">
+    <div class="span9 col-lg-16">
+        
+  <link rel="stylesheet" href="/Scripts/jquery-ui-1.10.3.custom/css/smoothness/jquery-ui-1.10.3.custom.min.css" />
+  <link rel="stylesheet" href="/Content/portal.css" />
+  <script type="text/javascript" src="/Scripts/Data/Portal.js"></script>
+
+        <div class="portal">
+        <div class="column">
+ 
+  <div class="portlet">
+    <div class="portlet-header">Appointments</div>
+    <div class="portlet-content"><div class="data-list">
+
+    <h3>
+        Upcoming
+    </h3>
+    <ul data-bind="foreach: Appointment">
+        <!-- ko if: (new Date(Date.parse($data.DateTime())).valueOf() >= 1314849600000) -->
+        <li>
+            <span data-bind="text: moment(new Date(Date.parse($data.DateTime()))).format('MM/DD/YYYY')"></span>,
+            <span data-bind="text:Location"></span>
+        </li>
+        <!-- /ko -->
+    </ul>
+
+    <h3>
+        Past
+    </h3>
+    <ul data-bind="foreach: Appointment">
+        <!-- ko if: (new Date(Date.parse($data.DateTime())).valueOf() < 1314849600000) -->
+        <li>
+            <span data-bind="text: moment(new Date(Date.parse($data.DateTime()))).format('MM/DD/YYYY')"></span>,
+            <span data-bind="text: Location"></span>
+        </li>
+        <!-- /ko -->
+    </ul>
+</div>
+</div>
+  </div>
+ 
+    
+ 
+    <div class="portlet">
+        <div class="portlet-header">Immunizations</div>
+        <div class="portlet-content"><div class="data-list">
+                                         <ul data-bind="foreach: $data.Immunizations()">
+                                             <li data-bind="text: Immunization()"></li>
+                                         </ul></div></div>
+    </div>
+    
+    
+ 
+  <div class="portlet">
+    <div class="portlet-header">Health Insurance</div>
+    <div class="portlet-content"><div class="data-list">
+    <ul data-bind="foreach: HealthInsurance">
+        <li data-bind="text: HealthInsuranceCompany"></li>
+    </ul></div></div>
+  </div>
+ 
+</div>
+ 
+<div class="column">
+  <div class="portlet">
+    <div class="portlet-header">Health Care Provider</div>
+    <div class="portlet-content"><div class="data-list">
+    <ul data-bind="foreach: HealthCareProvider">
+        <li data-bind="text: ProviderName"></li>
+    </ul></div></div>
+  </div>
+   
+     <div class="portlet">
+        <div class="portlet-header">Drugs</div>
+        <div class="portlet-content"><div class="data-list">
+
+                                         <h3>
+                                             Doctor Prescribed
+                                         </h3>
+                                         <ul data-bind="foreach: $data.Drugs.DoctorPrescribed()">
+                                             <li>
+                                                 <span class="title" data-bind="text: Medication"></span>
+                                                 <span class="details">
+                                                     <table>
+                                                         <tr>
+                                                             <td width="34%">Medication:</td>
+                                                             <td data-bind="text: Medication"></td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>Instructions:</td>
+                                                             <td data-bind="text: Instructions"></td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>Status:</td>
+                                                             <td data-bind="text: Status"></td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>Refills Remaining:</td>
+                                                             <td data-bind="text: RefillsRemaining"></td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>Last Filled On:</td>
+                                                             <td data-bind="text: moment(new Date(Date.parse($data.LastFilledOn()))).format('MM/DD/YYYY')"></td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>Initially Ordered On:</td>
+                                                             <td data-bind="text: moment(new Date(Date.parse($data.InitiallyOrderedOn()))).format('MM/DD/YYYY')"></td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>Quantity:</td>
+                                                             <td data-bind="text: Quantity"></td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>Days Supply:</td>
+                                                             <td data-bind="text: DaysSupply"></td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>Pharmacy:</td>
+                                                             <td data-bind="text: Pharmacy"></td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>Prescription Number:</td>
+                                                             <td data-bind="text: PrescriptionNumber"></td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>Projected Run Out Date:</td>
+                                                             <td data-bind="text: moment(new Date(Date.parse($data.ProjectedRunOutDate()))).format('MM/DD/YYYY')"></td>
+                                                         </tr>
+                                                     </table>
+                                                 </span>
+                                             </li>
+                                         </ul>
+
+                                         <h3>
+                                             Self Prescribed
+                                         </h3>
+                                         <ul data-bind="foreach: $data.Drugs.SelfPrescribed()">
+                                             <li data-bind="text: DrugName"></li>
+                                         </ul>
+                                     </div></div>
+    </div>
+    
+ 
+    <div class="portlet">
+        <div class="portlet-header">Labs</div>
+        <div class="portlet-content">
+            <div class="data-list">
+
+    <h3>
+        Provider Entered
+    </h3>
+    <ul data-bind="foreach: $data.Labs.ProviderEntered()">
+        <li data-bind="text: TestName"></li>
+    </ul>
+
+    <h3>
+        Self Entered
+    </h3>
+    <ul data-bind="foreach: $data.Labs.SelfEntered()">
+        <li data-bind="text: TestName"></li>
+    </ul>
+</div>
+        </div>
+    </div>
+ 
+</div>
+ 
+<div class="column">
+ 
+  <div class="portlet">
+    <div class="portlet-header">Allergies</div>
+      <div class="portlet-content">
+          <div class="data-list">
+
+    <h3>
+        Provider Entered
+    </h3>
+    <ul data-bind="foreach: $data.Allergy.ProviderEntered()">
+        <li data-bind="text: AllergyName"></li>
+    </ul>
+
+    <h3>
+        Self Entered
+    </h3>
+    <ul data-bind="foreach: $data.Allergy.SelfEntered()">
+        <li data-bind="text: AllergyName"></li>
+    </ul>
+</div>
+
+      </div>
+  </div>
+ 
+  <div class="portlet">
+    <div class="portlet-header">Vitals and Readings</div>
+    <div class="portlet-content"><div class="data-list">
+    <ul data-bind="foreach: VitalsAndReadings">
+        <li data-bind="text: MeasurementType"></li>
+    </ul></div></div>
+  </div>
+ 
+  <div class="portlet">
+    <div class="portlet-header">Medical Events History</div>
+    <div class="portlet-content"><div class="data-list">
+    <ul data-bind="foreach: MedicalEvents">
+        <li data-bind="text: MedicalEvent"></li>
+    </ul></div></div>
+  </div>
+ 
+  <div class="portlet">
+    <div class="portlet-header">Military Health History</div>
+    <div class="portlet-content"><div class="data-list">
+    <ul data-bind="foreach: MilitaryHealthHistory">
+        <li data-bind="text: EventTitle"></li>
+    </ul></div></div>
+  </div> 
+  <div class="portlet">
+    <div class="portlet-header">Family Health History</div>
+    <div class="portlet-content"><div class="data-list">
+    <ul data-bind="foreach: FamilyHealthHistory">
+        <li data-bind="text: Relationship"></li>
+    </ul></div></div>
+  </div>
+ 
+</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<script src="/Scripts/knockout-3.0.0.js" type="text/javascript"></script>
+<script src="/Scripts/knockout.mapping-latest.js" type="text/javascript"></script>
+<script src="~/Scripts/lib/momentjs/min/moment.min.js"></script>
+<script data-main="/Scripts/Data/main" src="/Scripts/lib/requirejs/require.js" type="text/javascript"></script>
+
+ 
+<div id="dialog" title="" style="width:600px">
+  <p></p>
+</div>

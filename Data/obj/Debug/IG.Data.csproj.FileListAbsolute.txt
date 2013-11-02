@@ -1,0 +1,9 @@
+F:\IG\Web\Data\bin\Debug\IG.Data.dll
+F:\IG\Web\Data\bin\Debug\IG.Data.pdb
+F:\IG\Web\Data\bin\Debug\MongoDB.Bson.dll
+F:\IG\Web\Data\bin\Debug\MongoDB.Driver.dll
+F:\IG\Web\Data\bin\Debug\MongoDB.Bson.xml
+F:\IG\Web\Data\bin\Debug\MongoDB.Driver.xml
+F:\IG\Web\Data\obj\Debug\IG.Data.dll
+F:\IG\Web\Data\obj\Debug\IG.Data.pdb
+F:\IG\Web\Data\obj\Debug\IG.Data.csprojResolveAssemblyReference.cache

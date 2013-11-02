@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "IG";
+    bool loggedIn = ViewBag.LoggedIn == true || (Session["LoggedIn"] != null && (bool) Session["LoggedIn"]);
+}
+
+<div class="container marketing">
+    <div class="row">
+
+        <div class="col-lg-4">
+            <img class="img-circle" src="/Content/images/blue-button.png" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;">
+            <h2>Personal Health Record</h2>
+            <p>Log in to view your personal health data.</p>
+            @if (loggedIn)
+            {
+                <p><a class="btn btn-default" href="@Url.Action("Index", "Data")">View details »</a></p>
+            }
+        </div>
+
+        <div class="col-lg-4">
+            <img class="img-circle" src="/Content/images/health.png" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;">
+            <h2>Treatment and Recovery Plans</h2>
+            <p>Login to view your treament and recovery plans.</p>
+            @if (loggedIn)
+            {
+                <p><a class="btn btn-default" href="#">View details »</a></p>
+            }
+        </div>
+
+        <div class="col-lg-4">
+            <img class="img-circle" src="/Content/images/doctor.png" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;">
+            <h2>Find A Provider</h2>
+            <p>Login to find a health care provider.</p>
+            @if (loggedIn)
+            {
+                <p><a class="btn btn-default" href="@Url.Action("Map")">View details »</a></p>                  
+            }
+        </div>
+    </div>
+</div>

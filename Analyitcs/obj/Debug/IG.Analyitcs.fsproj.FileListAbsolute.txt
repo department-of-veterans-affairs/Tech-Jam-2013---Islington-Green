@@ -1,0 +1,7 @@
+F:\IG\Web\Analyitcs\bin\Debug\Analyitcs.XML
+F:\IG\Web\Analyitcs\bin\Debug\IG.Analyitcs.dll
+F:\IG\Web\Analyitcs\bin\Debug\IG.Analyitcs.pdb
+F:\IG\Web\Analyitcs\bin\Debug\FSharp.Core.dll
+F:\IG\Web\Analyitcs\bin\Debug\FSharp.Core.xml
+F:\IG\Web\Analyitcs\obj\Debug\IG.Analyitcs.dll
+F:\IG\Web\Analyitcs\obj\Debug\IG.Analyitcs.pdb

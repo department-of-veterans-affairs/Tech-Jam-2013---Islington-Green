@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Appointments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Appointments</h2>
+
+<div id="data-list">
+
+    <h3>
+        Upcoming
+    </h3>
+    <ul data-bind="foreach: Appointments">
+        <!-- ko if: ($data.DateTime().substring(0,4) > 2010) -->
+        <li data-bind="text: DateTime"></li>
+        <!-- /ko -->
+    </ul>
+
+    <h3>
+        Past
+    </h3>
+    <ul data-bind="foreach: Appointments">
+        <!-- ko if: Number(($data.DateTime().substring(0,4)) < 2011) -->
+        <li data-bind="text: DateTime"></li>
+        <!-- /ko -->
+    </ul>
+</div>
+
+<script src="/Scripts/knockout-3.0.0.js" type="text/javascript"></script>
+<script src="/Scripts/knockout.mapping-latest.js" type="text/javascript"></script>
+<script data-main="/Scripts/Data/main" src="/Scripts/lib/requirejs/require.js" type="text/javascript"></script>

@@ -1,0 +1,19 @@
+﻿.portal { display: none; }
+.column { width: 340px; float: left; padding-bottom: 100px;}
+.portlet { margin: 0 1em 1em 0; font-size: 17px;}
+.portlet-header { margin: 0.3em; padding-bottom: 4px; padding-left: 0.2em;font-size: 125%; cursor: move;  }
+.portlet-header .ui-icon { float: right;cursor: pointer; }
+.portlet-content { padding: 0.4em; }
+.ui-sortable-placeholder { border: 1px dotted black; visibility: visible !important; height: 50px !important; }
+.ui-sortable-placeholder * { visibility: hidden; }
+
+.data-list h3 { font-size: 115%; }
+.data-list ul { list-style-type: square; }
+.data-list li { color: dodgerblue; text-decoration: underline; cursor: pointer;font-size: 90%; }
+.data-list li .details { display: none; }
+
+.ui-dialog-title { font-size: 125%; }
+#dialog { font-size: 110%; }
+#dialog p table { width: 600px; }
+#dialog p table tr { border-bottom: 1px solid #ccc;vertical-align: top; }
+#dialog p table tr:last-of-type { border-bottom: none; }

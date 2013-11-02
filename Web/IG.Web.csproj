@@ -1,0 +1,1186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{739BF523-BB5A-4086-A7E1-04481C8050CF}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>true</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\WebGrease.1.0.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson, Version=1.8.3.9, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.8.3.9, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.0.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\AllergyController.cs" />
+    <Compile Include="Api\AppointmentController.cs" />
+    <Compile Include="Api\CustomerInformationController.cs" />
+    <Compile Include="Api\DrugsController.cs" />
+    <Compile Include="Api\FamilyHealthHistoryController.cs" />
+    <Compile Include="Api\HealthCareProviderController.cs" />
+    <Compile Include="Api\HealthInsuranceController.cs" />
+    <Compile Include="Api\ImmunizationsController.cs" />
+    <Compile Include="Api\LabsController.cs" />
+    <Compile Include="Api\MedicalEventsController.cs" />
+    <Compile Include="Api\MilitaryHealthHistoryController.cs" />
+    <Compile Include="Api\RecoveryPlanController.cs" />
+    <Compile Include="Api\TreamentFacilitiesController.cs" />
+    <Compile Include="Api\TreatmentPlanController.cs" />
+    <Compile Include="Api\VitalsAndReadingsController.cs" />
+    <Compile Include="Controllers\DataController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InMemoryMembershipProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\carousel.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\blue-button.png" />
+    <Content Include="Content\images\carousel1.jpg" />
+    <Content Include="Content\images\carousel2.jpg" />
+    <Content Include="Content\images\carousel3.jpg" />
+    <Content Include="Content\images\doctor.png" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\health.png" />
+    <Content Include="Content\images\Icon1.png" />
+    <Content Include="Content\images\Icon2.png" />
+    <Content Include="Content\images\Icon3.png" />
+    <Content Include="Content\map.css" />
+    <Content Include="Content\portal.css" />
+    <Content Include="Content\site.css" />
+    <Content Include="App_Data\Customer.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="README.txt" />
+    <Content Include="Scripts\Data\Ajax.js" />
+    <Content Include="Scripts\Data\App.js" />
+    <Content Include="Scripts\Data\Data.js" />
+    <Content Include="Scripts\Data\Form.js" />
+    <Content Include="Scripts\Data\main.js" />
+    <Content Include="Scripts\Data\Portal.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\animated-overlay.gif" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\css\smoothness\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\js\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\js\jquery-ui-1.10.3.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom\js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Scripts\knockout-3.0.0.debug.js" />
+    <Content Include="Scripts\knockout-3.0.0.js" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Templates\appointments.html" />
+    <Content Include="_Data\Facilities.json" />
+    <None Include="Properties\PublishProfiles\islingtongreen - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\islingtongreen - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\islingtongreen - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-2.0.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\BtJs\affix.js" />
+    <Content Include="Scripts\BtJs\alert.js" />
+    <Content Include="Scripts\BtJs\application.js" />
+    <Content Include="Scripts\BtJs\button.js" />
+    <Content Include="Scripts\BtJs\carousel.js" />
+    <Content Include="Scripts\BtJs\collapse.js" />
+    <Content Include="Scripts\BtJs\customizer.js" />
+    <Content Include="Scripts\BtJs\dropdown.js" />
+    <Content Include="Scripts\BtJs\filesaver.js" />
+    <Content Include="Scripts\BtJs\holder.js" />
+    <Content Include="Scripts\BtJs\html5shiv.js" />
+    <Content Include="Scripts\BtJs\jquery.js" />
+    <Content Include="Scripts\BtJs\jszip.js" />
+    <Content Include="Scripts\BtJs\less.js" />
+    <Content Include="Scripts\BtJs\modal.js" />
+    <Content Include="Scripts\BtJs\popover.js" />
+    <Content Include="Scripts\BtJs\raw-files.js" />
+    <Content Include="Scripts\BtJs\respond.min.js" />
+    <Content Include="Scripts\BtJs\scrollspy.js" />
+    <Content Include="Scripts\BtJs\tab.js" />
+    <Content Include="Scripts\BtJs\tooltip.js" />
+    <Content Include="Scripts\BtJs\transition.js" />
+    <Content Include="Scripts\BtJs\uglify.js" />
+    <Content Include="Scripts\jquery-2.0.2.js" />
+    <Content Include="Scripts\jquery-2.0.2.min.js" />
+    <Content Include="Scripts\lib\amplify\.gitignore" />
+    <Content Include="Scripts\lib\amplify\demo\core\context\demo.css" />
+    <Content Include="Scripts\lib\amplify\demo\core\context\demo.html" />
+    <Content Include="Scripts\lib\amplify\demo\core\context\demo.js" />
+    <Content Include="Scripts\lib\amplify\demo\core\data\demo.css" />
+    <Content Include="Scripts\lib\amplify\demo\core\data\demo.html" />
+    <Content Include="Scripts\lib\amplify\demo\core\data\demo.js" />
+    <Content Include="Scripts\lib\amplify\demo\core\nodata\demo.css" />
+    <Content Include="Scripts\lib\amplify\demo\core\nodata\demo.html" />
+    <Content Include="Scripts\lib\amplify\demo\core\nodata\demo.js" />
+    <Content Include="Scripts\lib\amplify\demo\core\priority\demo.css" />
+    <Content Include="Scripts\lib\amplify\demo\core\priority\demo.html" />
+    <Content Include="Scripts\lib\amplify\demo\core\priority\demo.js" />
+    <Content Include="Scripts\lib\amplify\demo\store\implicit\demo.css" />
+    <Content Include="Scripts\lib\amplify\demo\store\implicit\demo.html" />
+    <Content Include="Scripts\lib\amplify\demo\store\implicit\demo.js" />
+    <Content Include="Scripts\lib\amplify\demo\store\sessionstorage\demo.css" />
+    <Content Include="Scripts\lib\amplify\demo\store\sessionstorage\demo.html" />
+    <Content Include="Scripts\lib\amplify\demo\store\sessionstorage\demo.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.4.1.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.4.2.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.4.3.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.4.4.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.4.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.5.1.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.5.2.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.5.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.6.1.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.6.2.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.6.3.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.6.4.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.6.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.7.1.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.7.2.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.7.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.8.0.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.8.1.js" />
+    <Content Include="Scripts\lib\amplify\external\jquery-1.8.2.js" />
+    <Content Include="Scripts\lib\amplify\external\json2.js" />
+    <Content Include="Scripts\lib\amplify\external\qunit-composite.css" />
+    <Content Include="Scripts\lib\amplify\external\qunit-composite.js" />
+    <Content Include="Scripts\lib\amplify\external\qunit.css" />
+    <Content Include="Scripts\lib\amplify\external\qunit.js" />
+    <Content Include="Scripts\lib\amplify\GPL-LICENSE.txt" />
+    <Content Include="Scripts\lib\amplify\header.js" />
+    <None Include="Scripts\lib\amplify\lib\amplify-vsdoc.js" />
+    <Content Include="Scripts\lib\amplify\lib\amplify.core.js" />
+    <Content Include="Scripts\lib\amplify\lib\amplify.core.min.js" />
+    <Content Include="Scripts\lib\amplify\lib\amplify.js" />
+    <Content Include="Scripts\lib\amplify\lib\amplify.min.js" />
+    <Content Include="Scripts\lib\amplify\lib\amplify.request.js" />
+    <Content Include="Scripts\lib\amplify\lib\amplify.request.min.js" />
+    <Content Include="Scripts\lib\amplify\lib\amplify.store.js" />
+    <Content Include="Scripts\lib\amplify\lib\amplify.store.min.js" />
+    <Content Include="Scripts\lib\amplify\MIT-LICENSE.txt" />
+    <None Include="Scripts\lib\amplify\src\amplify-vsdoc.js" />
+    <Content Include="Scripts\lib\amplify\src\amplify.core.js" />
+    <Content Include="Scripts\lib\amplify\src\amplify.js" />
+    <Content Include="Scripts\lib\amplify\src\amplify.request.js" />
+    <Content Include="Scripts\lib\amplify\src\amplify.store.js" />
+    <Content Include="Scripts\lib\amplify\src\core-header.js" />
+    <Content Include="Scripts\lib\amplify\src\core.js" />
+    <Content Include="Scripts\lib\amplify\src\request-header.js" />
+    <Content Include="Scripts\lib\amplify\src\request.js" />
+    <Content Include="Scripts\lib\amplify\src\store-header.js" />
+    <Content Include="Scripts\lib\amplify\src\store.js" />
+    <Content Include="Scripts\lib\amplify\test-server.js" />
+    <Content Include="Scripts\lib\amplify\test\core\routes\index.js" />
+    <Content Include="Scripts\lib\amplify\test\core\test.html" />
+    <Content Include="Scripts\lib\amplify\test\core\unit.js" />
+    <Content Include="Scripts\lib\amplify\test\index.html" />
+    <Content Include="Scripts\lib\amplify\test\jquery.js" />
+    <Content Include="Scripts\lib\amplify\test\request\routes\delay-route.js" />
+    <Content Include="Scripts\lib\amplify\test\request\routes\echo-route.js" />
+    <Content Include="Scripts\lib\amplify\test\request\routes\echoraw-route.js" />
+    <Content Include="Scripts\lib\amplify\test\request\routes\headers-route.js" />
+    <Content Include="Scripts\lib\amplify\test\request\routes\headers.js" />
+    <Content Include="Scripts\lib\amplify\test\request\routes\index.js" />
+    <Content Include="Scripts\lib\amplify\test\request\routes\jsonp-route.js" />
+    <Content Include="Scripts\lib\amplify\test\request\test.html" />
+    <Content Include="Scripts\lib\amplify\test\request\unit.js" />
+    <Content Include="Scripts\lib\amplify\test\store\other-page.html" />
+    <Content Include="Scripts\lib\amplify\test\store\routes\index.js" />
+    <Content Include="Scripts\lib\amplify\test\store\test.html" />
+    <Content Include="Scripts\lib\amplify\test\store\unit.js" />
+    <Content Include="Scripts\lib\amplify\test\testswarm.js" />
+    <Content Include="Scripts\lib\bootstrap-switch\bootstrap-switch.js" />
+    <Content Include="Scripts\lib\bootstrap-switch\bootstrap-switch.min.js" />
+    <Content Include="Scripts\lib\bootstrap\assets\css\docs.css" />
+    <Content Include="Scripts\lib\bootstrap\assets\css\pygments-manni.css" />
+    <Content Include="Scripts\lib\bootstrap\assets\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="Scripts\lib\bootstrap\assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="Scripts\lib\bootstrap\assets\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="Scripts\lib\bootstrap\assets\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="Scripts\lib\bootstrap\assets\ico\favicon.png" />
+    <Content Include="Scripts\lib\bootstrap\assets\js\application.js" />
+    <Content Include="Scripts\lib\bootstrap\assets\js\holder.js" />
+    <Content Include="Scripts\lib\bootstrap\assets\js\html5shiv.js" />
+    <Content Include="Scripts\lib\bootstrap\assets\js\jquery.js" />
+    <Content Include="Scripts\lib\bootstrap\assets\js\respond.min.js" />
+    <Content Include="Scripts\lib\bootstrap\components.html" />
+    <Content Include="Scripts\lib\bootstrap\css.html" />
+    <Content Include="Scripts\lib\bootstrap\customize.html" />
+    <Content Include="Scripts\lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Scripts\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Scripts\lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Scripts\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Scripts\lib\bootstrap\getting-started.html" />
+    <Content Include="Scripts\lib\bootstrap\Gruntfile.js" />
+    <Content Include="Scripts\lib\bootstrap\index.html" />
+    <Content Include="Scripts\lib\bootstrap\javascript.html" />
+    <Content Include="Scripts\lib\bootstrap\js\affix.js" />
+    <Content Include="Scripts\lib\bootstrap\js\alert.js" />
+    <Content Include="Scripts\lib\bootstrap\js\button.js" />
+    <Content Include="Scripts\lib\bootstrap\js\carousel.js" />
+    <Content Include="Scripts\lib\bootstrap\js\collapse.js" />
+    <Content Include="Scripts\lib\bootstrap\js\dropdown.js" />
+    <Content Include="Scripts\lib\bootstrap\js\modal.js" />
+    <Content Include="Scripts\lib\bootstrap\js\popover.js" />
+    <Content Include="Scripts\lib\bootstrap\js\scrollspy.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tab.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\index.html" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\phantom.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\server.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\affix.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\alert.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\button.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\carousel.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\collapse.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\dropdown.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\modal.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\phantom.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\popover.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\scrollspy.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\tab.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\tooltip.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\unit\transition.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\vendor\jquery.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\vendor\qunit.css" />
+    <Content Include="Scripts\lib\bootstrap\js\tests\vendor\qunit.js" />
+    <Content Include="Scripts\lib\bootstrap\js\tooltip.js" />
+    <Content Include="Scripts\lib\bootstrap\js\transition.js" />
+    <Content Include="Scripts\lib\bootstrap\_includes\ads.html" />
+    <Content Include="Scripts\lib\bootstrap\_includes\footer.html" />
+    <Content Include="Scripts\lib\bootstrap\_includes\header.html" />
+    <Content Include="Scripts\lib\bootstrap\_includes\nav-components.html" />
+    <Content Include="Scripts\lib\bootstrap\_includes\nav-css.html" />
+    <Content Include="Scripts\lib\bootstrap\_includes\nav-customize.html" />
+    <Content Include="Scripts\lib\bootstrap\_includes\nav-getting-started.html" />
+    <Content Include="Scripts\lib\bootstrap\_includes\nav-javascript.html" />
+    <Content Include="Scripts\lib\bootstrap\_includes\nav-main.html" />
+    <Content Include="Scripts\lib\bootstrap\_includes\old-bs-docs.html" />
+    <Content Include="Scripts\lib\bootstrap\_includes\social-buttons.html" />
+    <Content Include="Scripts\lib\bootstrap\_layouts\customize.html" />
+    <Content Include="Scripts\lib\bootstrap\_layouts\default.html" />
+    <Content Include="Scripts\lib\bootstrap\_layouts\home.html" />
+    <Content Include="Scripts\lib\fastclick\fastclick.js" />
+    <Content Include="Scripts\lib\jquery\.gitignore" />
+    <Content Include="Scripts\lib\jquery\jquery-migrate.js" />
+    <Content Include="Scripts\lib\jquery\jquery-migrate.min.js" />
+    <Content Include="Scripts\lib\jquery\jquery.js" />
+    <Content Include="Scripts\lib\jquery\jquery.min.js" />
+    <Content Include="Scripts\lib\momentjs\lang\ar-ma.js" />
+    <Content Include="Scripts\lib\momentjs\lang\ar.js" />
+    <Content Include="Scripts\lib\momentjs\lang\bg.js" />
+    <Content Include="Scripts\lib\momentjs\lang\br.js" />
+    <Content Include="Scripts\lib\momentjs\lang\ca.js" />
+    <Content Include="Scripts\lib\momentjs\lang\cs.js" />
+    <Content Include="Scripts\lib\momentjs\lang\cv.js" />
+    <Content Include="Scripts\lib\momentjs\lang\da.js" />
+    <Content Include="Scripts\lib\momentjs\lang\de.js" />
+    <Content Include="Scripts\lib\momentjs\lang\el.js" />
+    <Content Include="Scripts\lib\momentjs\lang\en-ca.js" />
+    <Content Include="Scripts\lib\momentjs\lang\en-gb.js" />
+    <Content Include="Scripts\lib\momentjs\lang\eo.js" />
+    <Content Include="Scripts\lib\momentjs\lang\es.js" />
+    <Content Include="Scripts\lib\momentjs\lang\et.js" />
+    <Content Include="Scripts\lib\momentjs\lang\eu.js" />
+    <Content Include="Scripts\lib\momentjs\lang\fa.js" />
+    <Content Include="Scripts\lib\momentjs\lang\fi.js" />
+    <Content Include="Scripts\lib\momentjs\lang\fr-ca.js" />
+    <Content Include="Scripts\lib\momentjs\lang\fr.js" />
+    <Content Include="Scripts\lib\momentjs\lang\gl.js" />
+    <Content Include="Scripts\lib\momentjs\lang\he.js" />
+    <Content Include="Scripts\lib\momentjs\lang\hi.js" />
+    <Content Include="Scripts\lib\momentjs\lang\hu.js" />
+    <Content Include="Scripts\lib\momentjs\lang\id.js" />
+    <Content Include="Scripts\lib\momentjs\lang\is.js" />
+    <Content Include="Scripts\lib\momentjs\lang\it.js" />
+    <Content Include="Scripts\lib\momentjs\lang\ja.js" />
+    <Content Include="Scripts\lib\momentjs\lang\ka.js" />
+    <Content Include="Scripts\lib\momentjs\lang\ko.js" />
+    <Content Include="Scripts\lib\momentjs\lang\lv.js" />
+    <Content Include="Scripts\lib\momentjs\lang\ms-my.js" />
+    <Content Include="Scripts\lib\momentjs\lang\nb.js" />
+    <Content Include="Scripts\lib\momentjs\lang\ne.js" />
+    <Content Include="Scripts\lib\momentjs\lang\nl.js" />
+    <Content Include="Scripts\lib\momentjs\lang\nn.js" />
+    <Content Include="Scripts\lib\momentjs\lang\pl.js" />
+    <Content Include="Scripts\lib\momentjs\lang\pt-br.js" />
+    <Content Include="Scripts\lib\momentjs\lang\pt.js" />
+    <Content Include="Scripts\lib\momentjs\lang\ro.js" />
+    <Content Include="Scripts\lib\momentjs\lang\ru.js" />
+    <Content Include="Scripts\lib\momentjs\lang\sk.js" />
+    <Content Include="Scripts\lib\momentjs\lang\sl.js" />
+    <Content Include="Scripts\lib\momentjs\lang\sq.js" />
+    <Content Include="Scripts\lib\momentjs\lang\sv.js" />
+    <Content Include="Scripts\lib\momentjs\lang\th.js" />
+    <Content Include="Scripts\lib\momentjs\lang\tr.js" />
+    <Content Include="Scripts\lib\momentjs\lang\tzm-la.js" />
+    <Content Include="Scripts\lib\momentjs\lang\tzm.js" />
+    <Content Include="Scripts\lib\momentjs\lang\uk.js" />
+    <Content Include="Scripts\lib\momentjs\lang\zh-cn.js" />
+    <Content Include="Scripts\lib\momentjs\lang\zh-tw.js" />
+    <Content Include="Scripts\lib\momentjs\min\langs.js" />
+    <Content Include="Scripts\lib\momentjs\min\langs.min.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\ar-ma.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\ar.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\bg.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\br.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\ca.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\cs.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\cv.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\da.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\de.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\el.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\en-ca.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\en-gb.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\eo.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\es.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\et.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\eu.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\fa.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\fi.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\fr-ca.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\fr.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\gl.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\he.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\hi.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\hu.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\id.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\is.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\it.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\ja.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\ka.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\ko.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\lv.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\ms-my.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\nb.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\ne.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\nl.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\nn.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\pl.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\pt-br.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\pt.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\ro.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\ru.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\sk.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\sl.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\sq.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\sv.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\th.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\tr.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\tzm-la.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\tzm.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\uk.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\zh-cn.js" />
+    <Content Include="Scripts\lib\momentjs\min\lang\zh-tw.js" />
+    <Content Include="Scripts\lib\momentjs\min\moment.min.js" />
+    <Content Include="Scripts\lib\momentjs\moment.js" />
+    <Content Include="Scripts\lib\openlayers\.gitignore" />
+    <Content Include="Scripts\lib\openlayers\art\arrows.svg" />
+    <Content Include="Scripts\lib\openlayers\art\layer-switcher-maximize.svg" />
+    <Content Include="Scripts\lib\openlayers\art\layer-switcher-minimize.svg" />
+    <Content Include="Scripts\lib\openlayers\art\marker.svg" />
+    <Content Include="Scripts\lib\openlayers\art\measuring-stick-off.svg" />
+    <Content Include="Scripts\lib\openlayers\art\measuring-stick-on.svg" />
+    <Content Include="Scripts\lib\openlayers\art\panning-hand-off.svg" />
+    <Content Include="Scripts\lib\openlayers\art\panning-hand-on.svg" />
+    <Content Include="Scripts\lib\openlayers\art\slider.svg" />
+    <Content Include="Scripts\lib\openlayers\art\zoom-world.svg" />
+    <Content Include="Scripts\lib\openlayers\art\zoombar.svg" />
+    <Content Include="Scripts\lib\openlayers\img\blank.gif" />
+    <Content Include="Scripts\lib\openlayers\img\cloud-popup-relative.png" />
+    <Content Include="Scripts\lib\openlayers\img\drag-rectangle-off.png" />
+    <Content Include="Scripts\lib\openlayers\img\drag-rectangle-on.png" />
+    <Content Include="Scripts\lib\openlayers\img\east-mini.png" />
+    <Content Include="Scripts\lib\openlayers\img\layer-switcher-maximize.png" />
+    <Content Include="Scripts\lib\openlayers\img\layer-switcher-minimize.png" />
+    <Content Include="Scripts\lib\openlayers\img\marker-blue.png" />
+    <Content Include="Scripts\lib\openlayers\img\marker-gold.png" />
+    <Content Include="Scripts\lib\openlayers\img\marker-green.png" />
+    <Content Include="Scripts\lib\openlayers\img\marker.png" />
+    <Content Include="Scripts\lib\openlayers\img\measuring-stick-off.png" />
+    <Content Include="Scripts\lib\openlayers\img\measuring-stick-on.png" />
+    <Content Include="Scripts\lib\openlayers\img\north-mini.png" />
+    <Content Include="Scripts\lib\openlayers\img\panning-hand-off.png" />
+    <Content Include="Scripts\lib\openlayers\img\panning-hand-on.png" />
+    <Content Include="Scripts\lib\openlayers\img\slider.png" />
+    <Content Include="Scripts\lib\openlayers\img\south-mini.png" />
+    <Content Include="Scripts\lib\openlayers\img\west-mini.png" />
+    <Content Include="Scripts\lib\openlayers\img\zoom-minus-mini.png" />
+    <Content Include="Scripts\lib\openlayers\img\zoom-plus-mini.png" />
+    <Content Include="Scripts\lib\openlayers\img\zoom-world-mini.png" />
+    <Content Include="Scripts\lib\openlayers\img\zoombar.png" />
+    <Content Include="Scripts\lib\openlayers\lib\deprecated.js" />
+    <Content Include="Scripts\lib\openlayers\lib\Firebug\errorIcon.png" />
+    <Content Include="Scripts\lib\openlayers\lib\Firebug\firebug.css" />
+    <Content Include="Scripts\lib\openlayers\lib\Firebug\firebug.html" />
+    <Content Include="Scripts\lib\openlayers\lib\Firebug\firebug.js" />
+    <Content Include="Scripts\lib\openlayers\lib\Firebug\firebugx.js" />
+    <Content Include="Scripts\lib\openlayers\lib\Firebug\infoIcon.png" />
+    <Content Include="Scripts\lib\openlayers\lib\Firebug\license.txt" />
+    <Content Include="Scripts\lib\openlayers\lib\Firebug\readme.txt" />
+    <Content Include="Scripts\lib\openlayers\lib\Firebug\warningIcon.png" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Animation.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\BaseTypes.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\BaseTypes\Bounds.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\BaseTypes\Class.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\BaseTypes\Date.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\BaseTypes\Element.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\BaseTypes\LonLat.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\BaseTypes\Pixel.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\BaseTypes\Size.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Console.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\ArgParser.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Attribution.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Button.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\CacheRead.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\CacheWrite.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\DragFeature.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\DragPan.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\DrawFeature.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\EditingToolbar.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Geolocate.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\GetFeature.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Graticule.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\KeyboardDefaults.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\LayerSwitcher.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Measure.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\ModifyFeature.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\MousePosition.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Navigation.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\NavigationHistory.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\NavToolbar.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\OverviewMap.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Pan.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Panel.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\PanPanel.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\PanZoom.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\PanZoomBar.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Permalink.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\PinchZoom.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Scale.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\ScaleLine.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\SelectFeature.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\SLDSelect.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Snapping.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Split.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\TouchNavigation.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\TransformFeature.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\UTFGrid.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\WMSGetFeatureInfo.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\WMTSGetFeatureInfo.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\Zoom.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\ZoomBox.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\ZoomIn.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\ZoomOut.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\ZoomPanel.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Control\ZoomToMaxExtent.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Events.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Events\buttonclick.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Events\featureclick.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Feature.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Feature\Vector.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Filter.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Filter\Comparison.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Filter\FeatureId.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Filter\Function.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Filter\Logical.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Filter\Spatial.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\ArcXML.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\ArcXML\Features.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\Atom.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\Context.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\CQL.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\CSWGetDomain.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\CSWGetDomain\v2_0_2.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\CSWGetRecords.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\CSWGetRecords\v2_0_2.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\EncodedPolyline.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\Filter.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\Filter\v1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\Filter\v1_0_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\Filter\v1_1_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\GeoJSON.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\GeoRSS.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\GML.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\GML\Base.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\GML\v2.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\GML\v3.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\GPX.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\JSON.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\KML.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\OGCExceptionReport.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\OSM.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\OWSCommon.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\OWSCommon\v1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\OWSCommon\v1_0_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\OWSCommon\v1_1_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\OWSContext.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\OWSContext\v0_3_1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\QueryStringFilter.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\SLD.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\SLD\v1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\SLD\v1_0_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\SLD\v1_0_0_GeoServer.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\SOSCapabilities.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\SOSCapabilities\v1_0_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\SOSGetFeatureOfInterest.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\SOSGetObservation.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\Text.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WCSCapabilities.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WCSCapabilities\v1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WCSCapabilities\v1_0_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WCSCapabilities\v1_1_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WCSGetCoverage.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WFS.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WFSCapabilities.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WFSCapabilities\v1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WFSCapabilities\v1_0_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WFSCapabilities\v1_1_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WFSDescribeFeatureType.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WFST.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WFST\v1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WFST\v1_0_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WFST\v1_1_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WKT.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMC.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMC\v1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMC\v1_0_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMC\v1_1_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMSCapabilities.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMSCapabilities\v1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMSCapabilities\v1_1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMSCapabilities\v1_1_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMSCapabilities\v1_1_1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMSCapabilities\v1_1_1_WMSC.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMSCapabilities\v1_3.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMSCapabilities\v1_3_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMSDescribeLayer.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMSDescribeLayer\v1_1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMSGetFeatureInfo.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMTSCapabilities.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WMTSCapabilities\v1_0_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WPSCapabilities.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WPSCapabilities\v1_0_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WPSDescribeProcess.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\WPSExecute.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\XLS.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\XLS\v1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\XLS\v1_1_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\XML.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Format\XML\VersionedOGC.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Geometry.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Geometry\Collection.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Geometry\Curve.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Geometry\LinearRing.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Geometry\LineString.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Geometry\MultiLineString.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Geometry\MultiPoint.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Geometry\MultiPolygon.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Geometry\Point.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Geometry\Polygon.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler\Box.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler\Click.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler\Drag.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler\Feature.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler\Hover.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler\Keyboard.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler\MouseWheel.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler\Path.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler\Pinch.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler\Point.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler\Polygon.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Handler\RegularPolygon.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Icon.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Kinetic.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\ar.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\be-tarask.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\bg.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\br.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\ca.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\cs-CZ.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\da-DK.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\de.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\el.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\en-CA.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\en.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\es.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\fi.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\fr.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\fur.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\gl.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\gsw.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\hr.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\hsb.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\hu.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\ia.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\id.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\io.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\is.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\it.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\ja.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\km.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\ksh.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\lt.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\nb.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\nds.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\nl.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\nn.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\oc.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\pl.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\pt-BR.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\pt.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\ro.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\ru.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\sk.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\sv-SE.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\te.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\vi.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\zh-CN.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Lang\zh-TW.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\ArcGIS93Rest.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\ArcGISCache.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\ArcIMS.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\Bing.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\Boxes.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\EventPane.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\FixedZoomLevels.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\GeoRSS.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\Google.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\Google\v3.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\Grid.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\HTTPRequest.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\Image.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\KaMap.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\KaMapCache.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\MapGuide.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\MapServer.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\Markers.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\OSM.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\PointGrid.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\PointTrack.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\SphericalMercator.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\Text.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\TileCache.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\TMS.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\UTFGrid.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\Vector.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\Vector\RootContainer.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\WMS.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\WMTS.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\WorldWind.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\XYZ.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Layer\Zoomify.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Map.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Marker.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Marker\Box.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Popup.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Popup\Anchored.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Popup\Framed.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Popup\FramedCloud.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Projection.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Protocol.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Protocol\CSW.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Protocol\CSW\v2_0_2.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Protocol\HTTP.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Protocol\Script.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Protocol\SOS.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Protocol\SOS\v1_0_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Protocol\WFS.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Protocol\WFS\v1.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Protocol\WFS\v1_0_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Protocol\WFS\v1_1_0.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Renderer.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Renderer\Canvas.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Renderer\Elements.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Renderer\SVG.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Renderer\VML.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Request.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Request\XMLHttpRequest.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Rule.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\SingleFile.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Spherical.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Strategy.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Strategy\BBOX.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Strategy\Cluster.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Strategy\Filter.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Strategy\Fixed.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Strategy\Paging.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Strategy\Refresh.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Strategy\Save.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Style.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Style2.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\StyleMap.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Symbolizer.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Symbolizer\Line.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Symbolizer\Point.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Symbolizer\Polygon.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Symbolizer\Raster.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Symbolizer\Text.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Tile.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\TileManager.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Tile\Image.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Tile\Image\IFrame.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Tile\UTFGrid.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Tween.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Util.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\Util\vendorPrefix.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\WPSClient.js" />
+    <Content Include="Scripts\lib\openlayers\lib\OpenLayers\WPSProcess.js" />
+    <Content Include="Scripts\lib\openlayers\lib\Rico\Color.js" />
+    <Content Include="Scripts\lib\openlayers\lib\Rico\Corner.js" />
+    <Content Include="Scripts\lib\openlayers\lib\Rico\license.js" />
+    <Content Include="Scripts\lib\openlayers\OpenLayers.debug.js" />
+    <Content Include="Scripts\lib\openlayers\OpenLayers.js" />
+    <Content Include="Scripts\lib\openlayers\OpenLayers.light.debug.js" />
+    <Content Include="Scripts\lib\openlayers\OpenLayers.light.js" />
+    <Content Include="Scripts\lib\openlayers\OpenLayers.min.js" />
+    <Content Include="Scripts\lib\openlayers\OpenLayers.mobile.debug.js" />
+    <Content Include="Scripts\lib\openlayers\OpenLayers.mobile.js" />
+    <Content Include="Scripts\lib\openlayers\popup.js" />
+    <Content Include="Scripts\lib\openlayers\theme\default\google.css" />
+    <Content Include="Scripts\lib\openlayers\theme\default\ie6-style.css" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\add_point_off.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\add_point_on.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\blank.gif" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\close.gif" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\drag-rectangle-off.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\drag-rectangle-on.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\draw_line_off.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\draw_line_on.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\draw_point_off.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\draw_point_on.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\draw_polygon_off.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\draw_polygon_on.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\editing_tool_bar.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\move_feature_off.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\move_feature_on.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\navigation_history.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\overview_replacement.gif" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\pan-panel-NOALPHA.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\pan-panel.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\panning-hand-off.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\panning-hand-on.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\pan_off.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\pan_on.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\remove_point_off.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\remove_point_on.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\ruler.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\save_features_off.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\save_features_on.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\view_next_off.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\view_next_on.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\view_previous_off.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\view_previous_on.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\zoom-panel-NOALPHA.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\img\zoom-panel.png" />
+    <Content Include="Scripts\lib\openlayers\theme\default\style.css" />
+    <Content Include="Scripts\lib\openlayers\theme\default\style.mobile.css" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG102067.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG102757.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG102758.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG21781.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG2264.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG26591.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG26912.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG27200.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG27563.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG32119.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG3632.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG41001.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG4139.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG4181.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG42304.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG4272.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG4302.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG900913.js" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\EPSG900913.txt" />
+    <Content Include="Scripts\lib\proj4js\lib\defs\GOOGLE.js" />
+    <Content Include="Scripts\lib\proj4js\lib\proj4js-combined.js" />
+    <Content Include="Scripts\lib\proj4js\lib\proj4js-compressed.js" />
+    <Content Include="Scripts\lib\proj4js\lib\proj4js.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\aea.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\aeqd.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\cass.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\cea.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\eqc.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\eqdc.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\equi.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\gauss.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\gnom.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\gstmerc.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\krovak.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\laea.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\lcc.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\merc.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\mill.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\moll.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\nzmg.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\omerc.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\ortho.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\poly.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\sinu.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\somerc.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\stere.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\sterea.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\tmerc.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\utm.js" />
+    <Content Include="Scripts\lib\proj4js\lib\projCode\vandg.js" />
+    <Content Include="Scripts\lib\proj4js\lib\util\MGRS.js" />
+    <Content Include="Scripts\lib\requirejs\.gitignore" />
+    <Content Include="Scripts\lib\requirejs\require.js" />
+    <Content Include="Scripts\lib\underscore\.gitignore" />
+    <Content Include="Scripts\lib\underscore\docs\docco.css" />
+    <Content Include="Scripts\lib\underscore\docs\favicon.ico" />
+    <Content Include="Scripts\lib\underscore\docs\images\background.png" />
+    <Content Include="Scripts\lib\underscore\docs\images\underscore.png" />
+    <Content Include="Scripts\lib\underscore\docs\public\stylesheets\normalize.css" />
+    <Content Include="Scripts\lib\underscore\docs\underscore.html" />
+    <Content Include="Scripts\lib\underscore\favicon.ico" />
+    <Content Include="Scripts\lib\underscore\index.html" />
+    <Content Include="Scripts\lib\underscore\index.js" />
+    <Content Include="Scripts\lib\underscore\test\arrays.js" />
+    <Content Include="Scripts\lib\underscore\test\chaining.js" />
+    <Content Include="Scripts\lib\underscore\test\collections.js" />
+    <Content Include="Scripts\lib\underscore\test\functions.js" />
+    <Content Include="Scripts\lib\underscore\test\index.html" />
+    <Content Include="Scripts\lib\underscore\test\objects.js" />
+    <Content Include="Scripts\lib\underscore\test\speed.js" />
+    <Content Include="Scripts\lib\underscore\test\utility.js" />
+    <Content Include="Scripts\lib\underscore\test\vendor\jquery.js" />
+    <Content Include="Scripts\lib\underscore\test\vendor\jslitmus.js" />
+    <Content Include="Scripts\lib\underscore\test\vendor\qunit.css" />
+    <Content Include="Scripts\lib\underscore\test\vendor\qunit.js" />
+    <Content Include="Scripts\lib\underscore\test\vendor\runner.js" />
+    <Content Include="Scripts\lib\underscore\underscore-min.js" />
+    <Content Include="Scripts\lib\underscore\underscore.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Templates\features.html" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\jquery-2.0.2.min.map" />
+    <Content Include="Views\Shared\_Carousel.cshtml" />
+    <Content Include="Views\Data\Appointments.cshtml" />
+    <Content Include="Views\Data\TreatmentPlan.cshtml" />
+    <Content Include="Views\Data\Drugs.cshtml" />
+    <Content Include="Views\Data\MyInformation.cshtml" />
+    <Content Include="Views\Data\UploadFile.cshtml" />
+    <Content Include="Views\Data\RecoveryPlan.cshtml" />
+    <Content Include="Views\Data\Contacts.cshtml" />
+    <Content Include="Views\Home\Map.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Data\Index.cshtml" />
+    <Content Include="Scripts\lib\amplify\.bower.json" />
+    <Content Include="Scripts\lib\amplify\.jshintrc" />
+    <Content Include="Scripts\lib\amplify\build.json" />
+    <Content Include="Scripts\lib\amplify\demo\core\context\demo.details" />
+    <Content Include="Scripts\lib\amplify\demo\core\data\demo.details" />
+    <Content Include="Scripts\lib\amplify\demo\core\nodata\demo.details" />
+    <Content Include="Scripts\lib\amplify\demo\core\priority\demo.details" />
+    <Content Include="Scripts\lib\amplify\demo\store\implicit\demo.details" />
+    <Content Include="Scripts\lib\amplify\demo\store\sessionstorage\demo.details" />
+    <Content Include="Scripts\lib\amplify\docs\amplify.core.md" />
+    <Content Include="Scripts\lib\amplify\docs\amplify.request.md" />
+    <Content Include="Scripts\lib\amplify\docs\amplify.store.md" />
+    <Content Include="Scripts\lib\amplify\package.json" />
+    <Content Include="Scripts\lib\amplify\readme.md" />
+    <Content Include="Scripts\lib\amplify\testswarm.json" />
+    <Content Include="Scripts\lib\amplify\test\request\static\data.json" />
+    <Content Include="Scripts\lib\amplify\test\request\static\jsend-error.json" />
+    <Content Include="Scripts\lib\amplify\test\request\static\jsend-error2.json" />
+    <Content Include="Scripts\lib\amplify\test\request\static\jsend-fail.json" />
+    <Content Include="Scripts\lib\amplify\test\request\static\jsend.json" />
+    <Content Include="Scripts\lib\bootstrap\.bower.json" />
+    <Content Include="Scripts\lib\bootstrap\bower.json" />
+    <Content Include="Scripts\lib\bootstrap\CNAME" />
+    <Content Include="Scripts\lib\bootstrap\composer.json" />
+    <Content Include="Scripts\lib\bootstrap\CONTRIBUTING.md" />
+    <Content Include="Scripts\lib\bootstrap\js\.jshintrc" />
+    <Content Include="Scripts\lib\bootstrap\less\accordion.less" />
+    <Content Include="Scripts\lib\bootstrap\less\alerts.less" />
+    <Content Include="Scripts\lib\bootstrap\less\badges.less" />
+    <Content Include="Scripts\lib\bootstrap\less\bootstrap.less" />
+    <Content Include="Scripts\lib\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Scripts\lib\bootstrap\less\button-groups.less" />
+    <Content Include="Scripts\lib\bootstrap\less\buttons.less" />
+    <Content Include="Scripts\lib\bootstrap\less\carousel.less" />
+    <Content Include="Scripts\lib\bootstrap\less\close.less" />
+    <Content Include="Scripts\lib\bootstrap\less\code.less" />
+    <Content Include="Scripts\lib\bootstrap\less\component-animations.less" />
+    <Content Include="Scripts\lib\bootstrap\less\dropdowns.less" />
+    <Content Include="Scripts\lib\bootstrap\less\forms.less" />
+    <Content Include="Scripts\lib\bootstrap\less\grid.less" />
+    <Content Include="Scripts\lib\bootstrap\less\jumbotron.less" />
+    <Content Include="Scripts\lib\bootstrap\less\labels.less" />
+    <Content Include="Scripts\lib\bootstrap\less\list-group.less" />
+    <Content Include="Scripts\lib\bootstrap\less\media.less" />
+    <Content Include="Scripts\lib\bootstrap\less\mixins.less" />
+    <Content Include="Scripts\lib\bootstrap\less\modals.less" />
+    <Content Include="Scripts\lib\bootstrap\less\navbar.less" />
+    <Content Include="Scripts\lib\bootstrap\less\navs.less" />
+    <Content Include="Scripts\lib\bootstrap\less\normalize.less" />
+    <Content Include="Scripts\lib\bootstrap\less\pager.less" />
+    <Content Include="Scripts\lib\bootstrap\less\pagination.less" />
+    <Content Include="Scripts\lib\bootstrap\less\panels.less" />
+    <Content Include="Scripts\lib\bootstrap\less\popovers.less" />
+    <Content Include="Scripts\lib\bootstrap\less\print.less" />
+    <Content Include="Scripts\lib\bootstrap\less\progress-bars.less" />
+    <Content Include="Scripts\lib\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Scripts\lib\bootstrap\less\scaffolding.less" />
+    <Content Include="Scripts\lib\bootstrap\less\tables.less" />
+    <Content Include="Scripts\lib\bootstrap\less\thumbnails.less" />
+    <Content Include="Scripts\lib\bootstrap\less\tooltip.less" />
+    <Content Include="Scripts\lib\bootstrap\less\type.less" />
+    <Content Include="Scripts\lib\bootstrap\less\utilities.less" />
+    <Content Include="Scripts\lib\bootstrap\less\variables.less" />
+    <Content Include="Scripts\lib\bootstrap\less\wells.less" />
+    <Content Include="Scripts\lib\bootstrap\LICENSE" />
+    <Content Include="Scripts\lib\bootstrap\package.json" />
+    <Content Include="Scripts\lib\bootstrap\README.md" />
+    <Content Include="Scripts\lib\bootstrap\_config.yml" />
+    <Content Include="Scripts\lib\jquery\.bower.json" />
+    <Content Include="Scripts\lib\jquery\bower.json" />
+    <Content Include="Scripts\lib\jquery\component.json" />
+    <Content Include="Scripts\lib\jquery\composer.json" />
+    <Content Include="Scripts\lib\jquery\jquery.min.map" />
+    <Content Include="Scripts\lib\jquery\package.json" />
+    <Content Include="Scripts\lib\jquery\README.md" />
+    <Content Include="Scripts\lib\momentjs\.bower.json" />
+    <Content Include="Scripts\lib\momentjs\component.json" />
+    <Content Include="Scripts\lib\momentjs\lang\readme.md" />
+    <Content Include="Scripts\lib\momentjs\LICENSE" />
+    <Content Include="Scripts\lib\momentjs\readme.md" />
+    <Content Include="Scripts\lib\openlayers\.bower.json" />
+    <Content Include="Scripts\lib\proj4js\.bower.json" />
+    <Content Include="Scripts\lib\requirejs\.bower.json" />
+    <Content Include="Scripts\lib\requirejs\package.json" />
+    <Content Include="Scripts\lib\underscore\.bower.json" />
+    <Content Include="Scripts\lib\underscore\.npmignore" />
+    <Content Include="Scripts\lib\underscore\.travis.yml" />
+    <Content Include="Scripts\lib\underscore\CNAME" />
+    <Content Include="Scripts\lib\underscore\CONTRIBUTING.md" />
+    <Content Include="Scripts\lib\underscore\docs\public\fonts\aller-bold.eot" />
+    <Content Include="Scripts\lib\underscore\docs\public\fonts\aller-bold.ttf" />
+    <Content Include="Scripts\lib\underscore\docs\public\fonts\aller-bold.woff" />
+    <Content Include="Scripts\lib\underscore\docs\public\fonts\aller-light.eot" />
+    <Content Include="Scripts\lib\underscore\docs\public\fonts\aller-light.ttf" />
+    <Content Include="Scripts\lib\underscore\docs\public\fonts\aller-light.woff" />
+    <Content Include="Scripts\lib\underscore\docs\public\fonts\novecento-bold.eot" />
+    <Content Include="Scripts\lib\underscore\docs\public\fonts\novecento-bold.ttf" />
+    <Content Include="Scripts\lib\underscore\docs\public\fonts\novecento-bold.woff" />
+    <Content Include="Scripts\lib\underscore\LICENSE" />
+    <Content Include="Scripts\lib\underscore\package.json" />
+    <Content Include="Scripts\lib\underscore\Rakefile" />
+    <Content Include="Scripts\lib\underscore\README.md" />
+    <Content Include="Scripts\lib\underscore\underscore-min.map" />
+    <Content Include="_Data\Facilities.csv" />
+    <Content Include="_Data\FacilitiesNC.csv" />
+    <Content Include="Views\Data\Labs.cshtml" />
+    <Content Include="Views\Data\Allergy.cshtml" />
+    <Content Include="Views\Data\FindProvider.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Analyitcs\IG.Analyitcs.fsproj">
+      <Project>{33b0db47-9a73-4b48-b5c2-c491c58f1488}</Project>
+      <Name>IG.Analyitcs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\IG.Data.csproj">
+      <Project>{0af6d71f-b44b-4653-bf29-8f159be63c3d}</Project>
+      <Name>IG.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>13106</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:29535/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

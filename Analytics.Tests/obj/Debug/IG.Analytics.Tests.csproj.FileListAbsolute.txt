@@ -1,0 +1,7 @@
+F:\IG\Web\Analytics.Tests\bin\Debug\IG.Analytics.Tests.dll
+F:\IG\Web\Analytics.Tests\bin\Debug\IG.Analytics.Tests.pdb
+F:\IG\Web\Analytics.Tests\bin\Debug\IG.Analyitcs.dll
+F:\IG\Web\Analytics.Tests\bin\Debug\IG.Analyitcs.pdb
+F:\IG\Web\Analytics.Tests\obj\Debug\IG.Analytics.Tests.csprojResolveAssemblyReference.cache
+F:\IG\Web\Analytics.Tests\obj\Debug\IG.Analytics.Tests.dll
+F:\IG\Web\Analytics.Tests\obj\Debug\IG.Analytics.Tests.pdb

@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IG.Web", "Web\IG.Web.csproj", "{739BF523-BB5A-4086-A7E1-04481C8050CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IG.Data", "Data\IG.Data.csproj", "{0AF6D71F-B44B-4653-BF29-8F159BE63C3D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "IG.Analyitcs", "Analyitcs\IG.Analyitcs.fsproj", "{33B0DB47-9A73-4B48-B5C2-C491C58F1488}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IG.Analytics.Tests", "Analytics.Tests\IG.Analytics.Tests.csproj", "{C7A4DB66-51AA-4327-A2DE-4658992971EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IG.Web.Tests", "IG.Web.Tests\IG.Web.Tests.csproj", "{8E08B684-E7C9-4AFE-8FED-EE31619BFF58}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://techjam7.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Data\\IG.Data.csproj
+		SccProjectName1 = Data
+		SccLocalPath1 = Data
+		SccProjectUniqueName2 = Analytics.Tests\\IG.Analytics.Tests.csproj
+		SccProjectName2 = Analytics.Tests
+		SccLocalPath2 = Analytics.Tests
+		SccProjectUniqueName3 = Web\\IG.Web.csproj
+		SccProjectName3 = Web
+		SccLocalPath3 = Web
+		SccProjectUniqueName4 = Analyitcs\\IG.Analyitcs.fsproj
+		SccProjectName4 = Analyitcs
+		SccLocalPath4 = Analyitcs
+		SccProjectUniqueName5 = IG.Web.Tests\\IG.Web.Tests.csproj
+		SccProjectName5 = IG.Web.Tests
+		SccLocalPath5 = IG.Web.Tests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{739BF523-BB5A-4086-A7E1-04481C8050CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739BF523-BB5A-4086-A7E1-04481C8050CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739BF523-BB5A-4086-A7E1-04481C8050CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739BF523-BB5A-4086-A7E1-04481C8050CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AF6D71F-B44B-4653-BF29-8F159BE63C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AF6D71F-B44B-4653-BF29-8F159BE63C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AF6D71F-B44B-4653-BF29-8F159BE63C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AF6D71F-B44B-4653-BF29-8F159BE63C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33B0DB47-9A73-4B48-B5C2-C491C58F1488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B0DB47-9A73-4B48-B5C2-C491C58F1488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B0DB47-9A73-4B48-B5C2-C491C58F1488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B0DB47-9A73-4B48-B5C2-C491C58F1488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7A4DB66-51AA-4327-A2DE-4658992971EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7A4DB66-51AA-4327-A2DE-4658992971EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7A4DB66-51AA-4327-A2DE-4658992971EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7A4DB66-51AA-4327-A2DE-4658992971EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E08B684-E7C9-4AFE-8FED-EE31619BFF58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E08B684-E7C9-4AFE-8FED-EE31619BFF58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E08B684-E7C9-4AFE-8FED-EE31619BFF58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E08B684-E7C9-4AFE-8FED-EE31619BFF58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
